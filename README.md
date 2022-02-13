@@ -6,7 +6,7 @@
 ## Installation
 
 `GO111MODULE=on` \
-`go install github.com/indigo-sadland/ctc`
+`go install github.com/indigo-sadland/ctc@latest`
 
 
 ## Usage
