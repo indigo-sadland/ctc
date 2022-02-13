@@ -108,7 +108,7 @@ func main() {
 	flag.Usage = func() {
 		fmt.Printf("Usage:\n\t" +
 			"-fs, <FILE1>,<FILE2>    Define two files separated by comma.\n\t" +
-			"-o,  <OUPUT_FILE>       Save results to file. Prints into terminal if not specified.",
+			"-o,  <OUTPUT_FILE>       Save results to file. Prints into terminal if not specified.",
 		)
 	}
 	flag.Parse()
