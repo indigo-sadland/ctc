@@ -94,21 +94,17 @@ func main() {
 
 	var slice []string
 
-	error1 := fmt.Sprintf(
-		"Ops... there is something wrong with the passed values.\n" +
-			"I stumbled on an empty string",
-	)
-	error2 := fmt.Sprintf(
-		"Ops... there is something wrong with the passed values.\n" +
-			"I can only take two files at once",
-	)
+	//error := fmt.Sprintf(
+	//	"Ops... there is something wrong with the passed values.\n" +
+	//		"I stumbled on an empty string",
+	//)
 
 	files = flag.String("fs", "", "")
 	output = flag.String("o", "", "")
 	flag.Usage = func() {
 		fmt.Printf("Usage:\n\t" +
-			"-fs, <FILE1>,<FILE2>    Define two files separated by comma.\n\t" +
-			"-o,  <OUTPUT_FILE>       Save results to file. Prints into terminal if not specified.",
+			"-fs, <FILE1>,<FILE2>,<FILEn>   Define two files separated by comma.\n\t" +
+			"-o,  <OUTPUT_FILE>             Save results to file. Prints into terminal if not specified.",
 		)
 	}
 	flag.Parse()
@@ -119,16 +115,12 @@ func main() {
 	}
 
 	// Split flag's value and combine it in slice.
-	for i, s := range strings.Split(*files, ",") {
+	for _, s := range strings.Split(*files, ",") {
 
-		if i > 1 {
-			gologger.Error().Msgf(error2)
-			break
-		}
+		s = strings.TrimSpace(s)
 
 		if s == "" {
-			gologger.Error().Msgf(error1)
-			break
+			continue
 		}
 
 		slice = append(slice, s)
