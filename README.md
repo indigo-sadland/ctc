@@ -13,7 +13,7 @@
 
 ```
 Usage:
-        -fs, <FILE1>,<FILE2>,<FILEn>    Define two files separated by comma.
+        -fs, <FILE1>,<FILE2>,<FILEn>    Define files separated by comma.
         -o,  <OUTPUT_FILE>              Save result to file. Prints into terminal if not specified.
 
 ```
