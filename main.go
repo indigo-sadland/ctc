@@ -94,16 +94,11 @@ func main() {
 
 	var slice []string
 
-	//error := fmt.Sprintf(
-	//	"Ops... there is something wrong with the passed values.\n" +
-	//		"I stumbled on an empty string",
-	//)
-
 	files = flag.String("fs", "", "")
 	output = flag.String("o", "", "")
 	flag.Usage = func() {
 		fmt.Printf("Usage:\n\t" +
-			"-fs, <FILE1>,<FILE2>,<FILEn>   Define two files separated by comma.\n\t" +
+			"-fs, <FILE1>,<FILE2>,<FILEn>   Define files separated by comma.\n\t" +
 			"-o,  <OUTPUT_FILE>             Save results to file. Prints into terminal if not specified.",
 		)
 	}
